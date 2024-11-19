@@ -21,6 +21,15 @@ $tasks = $stmt->fetchAll();
             <input type="text" name="task" placeholder="Add a new task..." required>
             <button type="submit">Add Task</button>
         </form>
+           <ul class="task-list">
+            <?php foreach ($tasks as $task): ?>
+                <li class="task">
+                    <span><?php echo htmlspecialchars($task['task']); ?></span>
+                    <div class="buttons">
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </div>
 </body>
 </html>
